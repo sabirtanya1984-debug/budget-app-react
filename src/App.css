@@ -1,0 +1,208 @@
+/* Красивый градиентный фон на весь экран */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* Путь к твоей картинке */
+  background-image: url('/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+/* Белая карточка по центру с тенями */
+.app-container {
+ max-width: 500px;
+ margin: 0 auto;
+ background: rgba(55, 55, 55, 0.65); /* Белый цвет с легкой прозрачностью (95%) */
+ padding: 30px;
+ border-radius: 20px;
+ box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); /* Делаем тень чуть темнее */
+ backdrop-filter: blur(5px); /* Легкое размытие фона под карточкой (эффект стекла) */
+}
+
+/* Логотип по центру */
+.logo {
+  display: block;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 15px;
+  border-radius: 50%; /* Делаем картинку круглой */
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Яркий заголовок */
+h1 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 25px;
+  font-size: 28px;
+}
+
+/* Красивые поля ввода */
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #a9a1a1;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #667eea; /* Поле подсвечивается при клике */
+}
+
+/* Яркая кнопка с градиентом */
+button {
+  width: 100%;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px;
+  margin-top: 25px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px); /* Кнопка как будто приподнимается */
+  box-shadow: 0 5px 15px rgba(152, 101, 203, 0.4);
+}
+
+/* Красивая плашка результата */
+.result-box {
+  margin-top: 25px;
+  padding: 20px;
+  background: #f8f9fa;
+  border-left: 6px solid #667eea;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.03);
+}
+
+.result-box h3 {
+  margin-top: 0;
+  color: #171414;
+}
+/* Стили для иконок в лейблах */
+.input-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Расстояние между иконкой и текстом */
+  color: #f8f4f4;
+}
+
+.input-group label svg {
+  color: #9f5ce1; /* Фиолетовый цвет иконок */
+  font-size: 18px;
+}
+
+/* Стили для кнопки удаления продукта */
+.delete-btn {
+  width: auto !important; /* Перебиваем ширину 100% */
+  margin: 0 !important;
+  padding: 8px 12px !important;
+  background: #c53743 !important; /* Ярко-красный */
+  border-radius: 8px;
+}
+
+.delete-btn:hover {
+  background: #ff6b81 !important;
+}
+/* --- АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ ТЕЛЕФОНОВ --- */
+@media (max-width: 600px) {
+  body {
+    padding: 10px; /* Уменьшаем отступы по краям на телефоне */
+  }
+
+  .app-container {
+    padding: 20px 15px; /* Чуть уменьшаем внутренние отступы карточки */
+    border-radius: 15px;
+  }
+
+  h1 {
+    font-size: 24px; /* Чуть уменьшаем заголовок */
+  }
+
+  /* Делаем так, чтобы поля ввода и селект (выпадающий список)
+     на маленьком экране вставали друг под другом, а не в одну строку */
+  .menu-controls {
+    flex-direction: column;
+  }
+
+  .menu-controls select {
+    width: 100% !important; /* Селект на всю ширину */
+  }
+
+  /* Кнопки делаем чуть меньше */
+  button {
+    padding: 12px;
+    font-size: 15px;
+  }
+}
+/* Делаем надпись "Потрачено на продукты" светлой и заметной */
+/* Делаем надпись "Потрачено на продукты" светлой и заметной */
+.total-sum {
+  color: #ffffff !important; /* Принудительно белый цвет */
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+}
+/* Стили для выпадающего списка дней недели */
+select {
+  background: rgba(85, 80, 80, 0.4); /* Темный полупрозрачный фон */
+  color: #ffffff; /* Белый текст */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Чтобы при нажатии на список выпадающие опции тоже были темными (работает в большинстве браузеров) */
+select option {
+  background: #2c3e50;
+  color: #ffffff;
+}
+/* Стили для блока с ответом от нейросети */
+.recipe-box {
+  margin-top: 20px;
+  background: rgba(20, 20, 20, 0.85); /* Темный фон с прозрачностью 85% */
+  padding: 20px;
+  border-radius: 12px;
+  color: #ffffff; /* Белый текст */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Легкая тень для объема */
+  border-left: 4px solid #a29bfe; /* Фиолетовая полоска слева для красоты */
+}
+
+.recipe-box h3 {
+  margin-top: 0;
+  color: #a29bfe; /* Фиолетовый заголовок */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.recipe-box p {
+  line-height: 1.6; /* Расстояние между строками, чтобы было удобно читать */
+  white-space: pre-wrap; /* Сохраняем переносы строк из текста нейросети */
+}
